@@ -1,0 +1,10 @@
+project: savantenvs/QLMarkdown
+target: fuzz_markdown
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_markdown/testsuite
+cmds:
+  - cmd: /mayhem/build/fuzz_markdown
+    libfuzzer: true
+    dictionary: /mayhem/mayhem/fuzz_markdown/fuzz_markdown.dict
+    timeout: 30
